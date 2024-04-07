@@ -1,17 +1,22 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from api.v1.api import internal_api
 import json, os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='./templates')
 
 app.register_blueprint(internal_api, url_prefix='/api/v1')
 
 @app.route("/")
-def index():
+def home():
     with open("./static/logs/blogpost.json", "r") as file:
         data = json.load(file)
-    
-    return render_template("index.html", blog_posts=data["posts"])
+    page = int(request.args.get('page', 1))
+    posts_per_page = 10
+    start_index = (page - 1) * posts_per_page
+    end_index = page * posts_per_page
+    paginated_posts = data["posts"][start_index:end_index]
+
+    return render_template("index.html", blog_posts=paginated_posts, next_page=page + 1)
 
 @app.route("/chi-siamo")
 def about():
@@ -22,26 +27,17 @@ def contattaci():
     return render_template("contact.html")
 
 @app.route("/blogpost/<titolo_post>")
-def posts(titolo_post):
+def blogpost(titolo_post):
     percorso_file_html = os.path.join("blogpost", f"{titolo_post}.html")
 
-    if os.path.exists(percorso_file_html):
-        return render_template(percorso_file_html)
+    if os.path.exists(os.path.join(app.template_folder, percorso_file_html)):
+        return render_template(f"/blogpost/{titolo_post}.html")
     else:
         return render_template("404.html"), 404
 
 @app.errorhandler(404)
 def pagina_non_trovata(error):
     return render_template('404.html'), 404
-
-
-def register_post():
-    path = "./templates/blogpost"
-    for nome_file in os.listdir(path):
-        if nome_file.endswith(".html"):
-            titolo_post = os.path.splitext(nome_file)[0]
-            app.add_url_rule(f"/blogpost/{titolo_post}.html", endpoint=f"{titolo_post}", view_func=posts)
-
+    
 if __name__ == "__main__":
-    register_post()
     app.run(debug=True)

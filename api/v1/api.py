@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 from datetime import datetime
-import json, os, time
+from api.v1.utilities import *
+import json, os, time, re
 
 internal_api = Blueprint('api_v1', __name__)
 
@@ -21,14 +22,14 @@ def createPostData():
     subtitle = request.form['subtitle']
     creator = request.form['creator']
     
-    formatted_title = title.replace(' ', "-").lower()
+    formatted_title = sanitize_title(title)
     
     nuovo_post = {
         "title": title,
         "formatted_title": formatted_title,
         "subtitle": subtitle,
         "creator": creator,
-        "data": str(datetime.fromtimestamp(time.time())), 
+        "data": str(datetime.fromtimestamp(time.time()).strftime("%b %d, %Y %T")), 
     }
     
     data['posts'].append(nuovo_post)
@@ -39,23 +40,22 @@ def createPostData():
     
     return "Nuovo post aggiunto con successo", 200
     
+def sanitize_title(title):
+    # tolgo tutti i caratteri non accettati nei file
+    title = title.replace(' ', "-").lower()   
+    title = re.sub(r'[àáâãä]', "a'", title)
+    title = re.sub(r'[èéêë]', "e'", title)
+    title = re.sub(r'[ìíîï]', "i'", title)
+    title = re.sub(r'[òóôõö]', "o'", title)
+    title = re.sub(r'[ùúûü]', "u'", title)
+    title = re.sub(r'[^\w\-\.]', '', title)
+    
+    return title
+    
 def createPostFile(titolo_post, subtitle):
     path = os.path.abspath(os.path.join(os.path.dirname(__file__), f"../../templates/blogpost/{titolo_post}.html"))
     
-    template_html = f"""
-    <!DOCTYPE html>
-    <html lang="it">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{titolo_post}</title>
-    </head>
-    <body>
-        <h1>{titolo_post}</h1>
-        <p>Contenuto del post...</p>
-    </body>
-    </html>
-    """
+    template_html = POST_TEMPLATE.replace("%titolo_post%", titolo_post)
     
     with open(path, 'w') as file:
         file.write(template_html)

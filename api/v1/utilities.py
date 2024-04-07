@@ -1,11 +1,12 @@
+POST_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Progetto TDP</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Sito per il progetto di tdp" />
         <meta name="author" content="4BINF" />
-        <title>Progetto TDP</title>
         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -29,37 +30,24 @@
                 </div>
             </div>
         </nav>
-        <header class="masthead" style="background-image: url('assets/img/about-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="page-heading">
-                            <h1>About Me</h1>
-                            <span class="subheading">This is what I do.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <header class="masthead" style="background-image: url('https://picsum.photos/1080/1080')">
         </header>
-        <!-- Main Content-->
-        <main class="mb-4">
+        <article class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+                        <p>Testo di prova</p>
                     </div>
                 </div>
             </div>
-        </main>
+        </article>
         <footer class="border-top" style="height: 40px;">
             <div class="container px-4 px-lg-5" style="padding-top: 5px; padding-bottom: 5px;">
                 <div class="row gx-2 gx-lg-3 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="#!">
+                                <a href="#">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
@@ -67,7 +55,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!">
+                                <a href="#">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -86,3 +74,4 @@
         <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
     </body>
 </html>
+"""
