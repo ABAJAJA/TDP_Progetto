@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from api.v1.api import internal_api
-import json, os
+import json, os, sys
 
 app = Flask(__name__, template_folder='./templates')
 
@@ -39,5 +39,15 @@ def blogpost(titolo_post):
 def pagina_non_trovata(error):
     return render_template('404.html'), 404
     
+def install_package(package):
+    try:
+        __import__(package)
+    except ImportError:
+        print(f"Il pacchetto {package} non è installato. Installazione in corso...")
+        import subprocess
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    
 if __name__ == "__main__":
+    install_package("flask")
+    install_package("datetime")    
     app.run(debug=True)
