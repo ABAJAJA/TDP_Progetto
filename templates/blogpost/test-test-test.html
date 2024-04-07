@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,46 +30,24 @@
                 </div>
             </div>
         </nav>
-        <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
-            <div class="container position-relative px-4 px-lg-5">
+        <header class="masthead" style="background-image: url('https://picsum.photos/1080/1080')">
+        </header>
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading">
-                            <h1>TDP Startup</h1>
-                            <span class="subheading"><i>Cammina verso un futuro più verde, un passo alla volta.</i></span>
-                        </div>
+                        <p>Testo di prova</p>
                     </div>
                 </div>
             </div>
-        </header>
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    {% for post in blog_posts %}
-                    <div class="post-preview">
-                        <a href="/blogpost/{{ post['formatted_title'] }}">
-                            <h4 class="post-title">{{ post['title'] }}</h4>
-                            <h5 class="post-subtitle">{{ post['subtitle'] }}</h5>
-                        </a>
-                        <p class="post-meta">
-                            Postato da <strong>{{ post['creator'] }}</strong> il <strong>{{ post['data'] }}</strong>
-                        </p>
-                    </div>
-                    <hr class="my-4" />
-                    {% endfor %}
-                    <div class="d-flex justify-content-end mb-4">
-                        <a class="btn btn-primary text-uppercase" href="?page={{ next_page }}">Older Posts →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </article>
         <footer class="border-top" style="height: 40px;">
             <div class="container px-4 px-lg-5" style="padding-top: 5px; padding-bottom: 5px;">
                 <div class="row gx-2 gx-lg-3 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="#!">
+                                <a href="#">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
@@ -76,7 +55,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!">
+                                <a href="#">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
