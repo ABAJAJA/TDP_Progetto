@@ -75,3 +75,11 @@ POST_TEMPLATE = """
     </body>
 </html>
 """
+
+TOKENS = '''{
+    "HEgDYgAaUjzphCOsiBVdxmUaBORGEvNn": "Baciu",
+    "SJPTjZSxUWGGTUTGVUDoteNOPNRCdHsS": "Forni",
+    "JWIJHLqDdKwtMIBGgjBTnAzDfSEvVVyI": "Cavagni",
+    "GaqrskHFrulPMVxraUCwIoSgMmHMqPIR": "Prof. Folli",
+    "eVDERIPzKkWwQYHwsdZxPxkCnIsGmzSW": "Prof. Dotti"
+}'''

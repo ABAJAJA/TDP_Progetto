@@ -1,44 +1,51 @@
 from flask import Blueprint, request
 from datetime import datetime
-from api.v1.utilities import *
+from api.utilities import *
 import json, os, time, re
 
 internal_api = Blueprint('api_v1', __name__)
 
 @internal_api.route('/getblogpost', methods=['GET'])
 def getBlogDatas():
-    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../static/logs/blogpost.json"))
-    with open(path, 'r') as file:
-        data = json.load(file)
-    return data
+    valid_token = json.loads(TOKENS)
+    if request.headers.get("X-Api-Token") in valid_token:
+        path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../static/logs/blogpost.json"))
+        with open(path, 'r') as file:
+            data = json.load(file)
+        return data
+    else:
+        return "Errore, token non valido.", 403
 
 @internal_api.route('/createblogpost', methods=['POST'])
 def createPostData():
-    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../static/logs/blogpost.json"))
-    with open(path, 'r') as file:
-        data = json.load(file)
-    
-    title = request.form['title']
-    subtitle = request.form['subtitle']
-    creator = request.form['creator']
-    
-    formatted_title = sanitize_title(title)
-    
-    nuovo_post = {
-        "title": title,
-        "formatted_title": formatted_title,
-        "subtitle": subtitle,
-        "creator": creator,
-        "data": str(datetime.fromtimestamp(time.time()).strftime("%b %d, %Y %T")), 
-    }
-    
-    data['posts'].append(nuovo_post)
-    with open(path, 'w') as file:
-        json.dump(data, file, indent=4)
-    
-    createPostFile(formatted_title, subtitle)
-    
-    return "Nuovo post aggiunto con successo", 200
+    valid_token = json.loads(TOKENS)
+    if request.headers.get("X-Api-Token") in valid_token:
+        path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../static/logs/blogpost.json"))
+        with open(path, 'r') as file:
+            data = json.load(file)
+        
+        title = request.form['title']
+        subtitle = request.form['subtitle']
+        creator = valid_token[request.headers.get("X-Api-Token")]
+        
+        formatted_title = sanitize_title(title)
+        
+        nuovo_post = {
+            "title": title,
+            "formatted_title": formatted_title,
+            "subtitle": subtitle,
+            "creator": creator,
+            "data": str(datetime.fromtimestamp(time.time()).strftime("%b %d, %Y %T")), 
+        }
+        
+        data['posts'].append(nuovo_post)
+        with open(path, 'w') as file:
+            json.dump(data, file, indent=4)
+        
+        createPostFile(formatted_title, subtitle)
+        return "Nuovo post aggiunto con successo", 200
+    else:
+        return "Errore, token non valido.", 403
     
 def sanitize_title(title):
     # tolgo tutti i caratteri non accettati nei file
