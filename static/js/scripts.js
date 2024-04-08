@@ -19,3 +19,43 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollPos = currentTop;
     });
 })
+
+document.getElementById("submitButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var errors = false;
+
+    
+    document.querySelectorAll(".error-message").forEach(function(element) {
+        element.textContent = "";
+    });
+
+   
+    if (name.length < 2) {
+        document.getElementById("nameError").textContent = "Name must be at least 2 characters long";
+        errors = true;
+    }
+
+    
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        document.getElementById("emailError").textContent = "Invalid email address";
+        errors = true;
+    }
+
+    
+    var phoneRegex = /^\d{10,}$/;
+    if (!phoneRegex.test(phone)) {
+        document.getElementById("phoneError").textContent = "Phone number must have at least 10 digits";
+        errors = true;
+    }
+
+    if (!errors) {
+        
+        document.getElementById("contactForm").reset(); 
+        document.getElementById("contactForm").style.display = "none";
+        document.getElementById("submitSuccessMessage").classList.remove("d-none");
+    }
+});

@@ -50,30 +50,31 @@
                                 <div class="form-floating">
                                     <input class="form-control" id="name" type="text" />
                                     <label for="name">Name</label>
+                                    <span class="error-message" id="nameError"></span>
                                 </div>
                                 <div class="form-floating">
                                     <input class="form-control" id="email" type="email" />
                                     <label for="email">Email address</label>
+                                    <span class="error-message" id="emailError"></span>
                                 </div>
                                 <div class="form-floating">
                                     <input class="form-control" id="phone" type="tel" />
                                     <label for="phone">Phone Number</label>
+                                    <span class="error-message" id="phoneError"></span>
                                 </div>
                                 <div class="form-floating">
-                                    <textarea class="form-control" id="message" style="height: 12rem" ></textarea>
+                                    <textarea class="form-control" id="message" style="height: 12rem"></textarea>
                                     <label for="message">Message</label>
+                                    <span class="error-message" id="messageError"></span>
                                 </div>
-                                <br />
-                                
+                                <br/>
                                 <div class="d-none" id="submitSuccessMessage">
                                     <div class="text-center mb-3">
-                                        <div class="fw-bolder">Abbiamo ricevuto il tuo messaggio!</div>
-                                        Ti risponderemo nel minor tempo possibile.
-                                        <br />
+                                        <div class="fw-bolder">Abbiamo ricevuto il tuo messaggio! Ti risponderemo nel minor tempo possibile.</div>
+                                        <br/>
                                     </div>
                                 </div>
-                                
-                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="button">Send</button>
                             </form>
                         </div>
                     </div>
@@ -94,7 +95,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!">
+                                <a href="https://github.com/ABAJAJA/TDP_Progetto">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
