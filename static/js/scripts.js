@@ -34,21 +34,21 @@ document.getElementById("submitButton").addEventListener("click", function(event
 
    
     if (name.length < 2) {
-        document.getElementById("nameError").textContent = "Name must be at least 2 characters long";
+        document.getElementById("nameError").textContent = "Il nome deve contenere almeno due caratteri";
         errors = true;
     }
 
     
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        document.getElementById("emailError").textContent = "Invalid email address";
+        document.getElementById("emailError").textContent = "indirizzo email non valido";
         errors = true;
     }
 
     
     var phoneRegex = /^\d{10,}$/;
     if (!phoneRegex.test(phone)) {
-        document.getElementById("phoneError").textContent = "Phone number must have at least 10 digits";
+        document.getElementById("phoneError").textContent = "Il numero di telefono deve contenere almeno dieci cifre";
         errors = true;
     }
 
