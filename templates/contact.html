@@ -29,7 +29,7 @@
                 </div>
             </div>
         </nav>
-        <header class="masthead" style="background-image: url('assets/img/contact-bg.jpg')">
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/contact-bg.jpg') }}')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -68,14 +68,14 @@
                                     <span class="error-message" id="messageError"></span>
                                 </div>
                                 <br/>
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Abbiamo ricevuto il tuo messaggio! Ti risponderemo nel minor tempo possibile.</div>
-                                        <br/>
-                                    </div>
-                                </div>
                                 <button class="btn btn-primary text-uppercase" id="submitButton" type="button">Send</button>
                             </form>
+                            <div class="d-none py-2" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Abbiamo ricevuto il tuo messaggio! Ti risponderemo nel minor tempo possibile.</div>
+                                    <br/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

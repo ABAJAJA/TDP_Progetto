@@ -20,24 +20,22 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 })
 
+//form validation
 document.getElementById("submitButton").addEventListener("click", function(event) {
     event.preventDefault();
     var name = document.getElementById("name").value.trim();
     var email = document.getElementById("email").value.trim();
     var phone = document.getElementById("phone").value.trim();
     var errors = false;
-
     
     document.querySelectorAll(".error-message").forEach(function(element) {
         element.textContent = "";
     });
 
-   
     if (name.length < 2) {
         document.getElementById("nameError").textContent = "Il nome deve contenere almeno due caratteri";
         errors = true;
     }
-
     
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -45,7 +43,6 @@ document.getElementById("submitButton").addEventListener("click", function(event
         errors = true;
     }
 
-    
     var phoneRegex = /^\d{10,}$/;
     if (!phoneRegex.test(phone)) {
         document.getElementById("phoneError").textContent = "Il numero di telefono deve contenere almeno dieci cifre";
@@ -53,9 +50,10 @@ document.getElementById("submitButton").addEventListener("click", function(event
     }
 
     if (!errors) {
-        
         document.getElementById("contactForm").reset(); 
         document.getElementById("contactForm").style.display = "none";
         document.getElementById("submitSuccessMessage").classList.remove("d-none");
+        //Ritorna al top della pagina
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });

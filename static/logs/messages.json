@@ -1,0 +1,10 @@
+{
+    "messages": [
+        {
+            "name": "Test Name",
+            "email": "test@example.com",
+            "phone": "123 456 7890",
+            "message": "Messaggio di test delle API"
+        }
+    ]
+}

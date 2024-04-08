@@ -5,6 +5,45 @@ import json, os, time, re
 
 internal_api = Blueprint('api_v1', __name__)
 
+@internal_api.route('/getMessages', methods=['GET'])
+def getMessages():
+    valid_token = json.loads(TOKENS)
+    if request.headers.get("X-Api-Token") in valid_token:
+        path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../static/logs/messages.json"))
+        with open(path, 'r') as file:
+            data = json.load(file)
+        return data
+    else:
+        return "Errore, token non valido.", 403
+
+@internal_api.route('/createMessage', methods=['POST'])
+def createMessage():
+    valid_token = json.loads(TOKENS)
+    if request.headers.get("X-Api-Token") in valid_token:
+        path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../static/logs/messages.json"))
+        with open(path, 'r') as file:
+            data = json.load(file)
+        
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        message = request.form['message']
+        
+        newMsg = {
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "message": message
+        }
+        
+        data['messages'].append(newMsg)
+        with open(path, 'w') as file:
+            json.dump(data, file, indent=4)
+        
+        return "Nuovo messaggio aggiunto con successo", 200
+    else:
+        return "Errore, token non valido.", 403
+
 @internal_api.route('/getblogpost', methods=['GET'])
 def getBlogDatas():
     valid_token = json.loads(TOKENS)
@@ -30,7 +69,7 @@ def createPostData():
         
         formatted_title = sanitize_title(title)
         
-        nuovo_post = {
+        newPost = {
             "title": title,
             "formatted_title": formatted_title,
             "subtitle": subtitle,
@@ -38,7 +77,7 @@ def createPostData():
             "data": str(datetime.fromtimestamp(time.time()).strftime("%b %d, %Y %T")), 
         }
         
-        data['posts'].append(nuovo_post)
+        data['posts'].append(newPost)
         with open(path, 'w') as file:
             json.dump(data, file, indent=4)
         
