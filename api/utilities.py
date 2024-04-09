@@ -76,6 +76,8 @@ POST_TEMPLATE = """
 </html>
 """
 
+WEBSERVER_TOKEN = "OrqQfyXOUGIXigjfCHhgTCVNewZWAXEe"
+
 TOKENS = '''{
     "HEgDYgAaUjzphCOsiBVdxmUaBORGEvNn": "Baciu",
     "SJPTjZSxUWGGTUTGVUDoteNOPNRCdHsS": "Forni",

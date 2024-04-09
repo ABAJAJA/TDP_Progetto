@@ -7,8 +7,7 @@ internal_api = Blueprint('api_v1', __name__)
 
 @internal_api.route('/getMessages', methods=['GET'])
 def getMessages():
-    valid_token = json.loads(TOKENS)
-    if request.headers.get("X-Api-Token") in valid_token:
+    if request.headers.get("X-Api-Token") == WEBSERVER_TOKEN:
         path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../static/logs/messages.json"))
         with open(path, 'r') as file:
             data = json.load(file)
@@ -18,8 +17,7 @@ def getMessages():
 
 @internal_api.route('/createMessage', methods=['POST'])
 def createMessage():
-    valid_token = json.loads(TOKENS)
-    if request.headers.get("X-Api-Token") in valid_token:
+    if request.headers.get("X-Api-Token") == WEBSERVER_TOKEN:
         path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../static/logs/messages.json"))
         with open(path, 'r') as file:
             data = json.load(file)
