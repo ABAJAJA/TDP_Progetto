@@ -21,11 +21,13 @@ def createMessage():
         path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../static/logs/messages.json"))
         with open(path, 'r') as file:
             data = json.load(file)
-        
-        name = request.form['name']
-        email = request.form['email']
-        phone = request.form['phone']
-        message = request.form['message']
+
+        req_data = json.loads(request.data)
+
+        name = req_data['name']
+        email = req_data['email']
+        phone = req_data['phone']
+        message = req_data['message']
         
         newMsg = {
             "name": name,
