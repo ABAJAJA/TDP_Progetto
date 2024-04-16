@@ -101,7 +101,7 @@ def sanitize_title(title):
 def createPostFile(titolo_post, subtitle):
     path = os.path.abspath(os.path.join(os.path.dirname(__file__), f"../../templates/blogpost/{titolo_post}.html"))
     
-    template_html = POST_TEMPLATE.replace("%titolo_post%", titolo_post)
+    template_html = POST_TEMPLATE.replace("%titolo_post%", titolo_post).replace("%sottotitolo_post%", subtitle)
     
     with open(path, 'w') as file:
         file.write(template_html)
