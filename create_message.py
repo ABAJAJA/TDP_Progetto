@@ -1,17 +1,10 @@
-from requests import post
+from requests import get
 
-URL = "http://127.0.0.1:5000/api/v1/createMessage"
+URL = "http://127.0.0.1:5000/api/v1/getcitypollution"
 
 header = {
-    "X-Api-Token": "OrqQfyXOUGIXigjfCHhgTCVNewZWAXEe"
+    "X-Api-Token": "eVDERIPzKkWwQYHwsdZxPxkCnIsGmzSW"
 }
 
-data = {
-    "name": "nome",
-    "email": "email@gmail.com",
-    "phone": "123",
-    "message": "messaggio di test"
-}
-
-response = post(URL, data=data, headers=header)
+response = get(URL, headers=header)
 print(response.text)

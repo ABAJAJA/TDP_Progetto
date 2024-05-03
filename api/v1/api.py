@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from datetime import datetime
 from api.utilities import *
-import json, os, time, re
+import json, os, time, re, random
 
 internal_api = Blueprint('api_v1', __name__)
 
@@ -83,6 +83,20 @@ def createPostData():
         
         createPostFile(formatted_title, subtitle)
         return "Nuovo post aggiunto con successo", 200
+    else:
+        return "Errore, token non valido.", 403
+    
+@internal_api.route("/getcitypollution", methods=["GET"])
+def getCityPollution():
+    valid_token = json.loads(TOKENS)
+    if request.headers.get("X-Api-Token") in valid_token:
+        data = {
+            "pm10": str(random.randint(15, 50)),
+            "pm2_5": str(random.randint(3,25)),
+            "NO2": str(random.randint(10, 40)),
+        }
+        
+        return data, 200
     else:
         return "Errore, token non valido.", 403
     
