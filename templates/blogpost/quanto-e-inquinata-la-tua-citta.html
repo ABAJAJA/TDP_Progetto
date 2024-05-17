@@ -115,30 +115,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-    <script>
-        document.getElementById('region-select').addEventListener('change', function() {
-            const region = this.value;
-            fetch('127.0.0.1:5000/api/v1/getcitypollution', {
-                    method: 'GET',
-                    headers: {
-                        "X-Api-Token": "SJPTjZSxUWGGTUTGVUDoteNOPNRCdHsS"
-                    }
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Errore nella richiesta: ' + response.statusText);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    document.getElementById('pm10').textContent = data.pm10;
-                    document.getElementById('pm2_5').textContent = data.pm2_5;
-                    document.getElementById('no2').textContent = data.NO2;
-                })
-                .catch(error => console.error('Errore nella richiesta:', error));
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/region.js') }}"></script>
 </body>
 
 </html>
