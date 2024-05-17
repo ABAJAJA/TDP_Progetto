@@ -1,89 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Progetto TDP</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Sito per il progetto di tdp" />
-        <meta name="author" content="4BINF" />
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="/">TDP Startup</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+<head>
+    <title>Progetto TDP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sito per il progetto di tdp" />
+    <meta name="author" content="4BINF" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="/">TDP Startup</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/chi-siamo">Chi siamo</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/contattaci">Contattaci</a></li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/chi-siamo">Chi siamo</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/contattaci">Contattaci</a></li>
+                </ul>
             </div>
-        </nav>
-        <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/post-inquinamento.jpg') }}">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading">
-                            <h2>Quanto è inquinata la tua città?</h2>
-                            <span class="subheading"><i>Scopri quanto è inquinata l'aria che respiri</i></span>
-                        </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/post-inquinamento.jpg') }}')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h2>Quanto è inquinata la tua città?</h2>
+                        <span class="subheading"><i>Scopri quanto è inquinata l'aria che respiri</i></span>
                     </div>
                 </div>
             </div>
-        </header>
-        <article class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>
-                            Ti sei mai chiesto quanto possa essere inquinata la tua città?              <br />
-                            Seleziona la  tua città di provenienza e scopri i dati relativi ad essa!
-                        </p>    
-                        <!-- Make code for select that use API -->
+        </div>
+    </header>
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p>
+                        Ti sei mai chiesto quanto possa essere inquinata la tua città? <br /> Seleziona la tua città di provenienza e scopri i dati relativi ad essa!
+                    </p>
+                    <div>
+                        <label for="region-select">Seleziona la tua regione:</label>
+                        <select id="region-select" name="region">
+                                <option value="Abruzzo">Abruzzo</option>
+                                <option value="Basilicata">Basilicata</option>
+                                <option value="Calabria">Calabria</option>
+                                <option value="Campania">Campania</option>
+                                <option value="Emilia-Romagna">Emilia-Romagna</option>
+                                <option value="Friuli-Venezia Giulia">Friuli-Venezia Giulia</option>
+                                <option value="Lazio">Lazio</option>
+                                <option value="Liguria">Liguria</option>
+                                <option value="Lombardia">Lombardia</option>
+                                <option value="Marche">Marche</option>
+                                <option value="Molise">Molise</option>
+                                <option value="Piemonte">Piemonte</option>
+                                <option value="Puglia">Puglia</option>
+                                <option value="Sardegna">Sardegna</option>
+                                <option value="Sicilia">Sicilia</option>
+                                <option value="Toscana">Toscana</option>
+                                <option value="Trentino-Alto Adige">Trentino-Alto Adige</option>
+                                <option value="Umbria">Umbria</option>
+                                <option value="Valle d'Aosta">Valle d'Aosta</option>
+                                <option value="Veneto">Veneto</option>
+                            </select>
+                    </div>
+                    <div id="pollution-data" style="margin-top: 20px">
+                        <h3>Dati sull'inquinamento:</h3>
+                        <p>PM10: <span id="pm10"></span></p>
+                        <p>PM2.5: <span id="pm2_5"></span></p>
+                        <p>NO2: <span id="no2"></span></p>
                     </div>
                 </div>
             </div>
-        </article>
-        <footer class="border-top" style="height: 40px;">
-            <div class="container px-4 px-lg-5" style="padding-top: 5px; padding-bottom: 5px;">
-                <div class="row gx-2 gx-lg-3 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <ul class="list-inline text-center">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <span class="fa-stack fa-lg">
+        </div>
+    </article>
+    <footer class="border-top" style="height: 40px;">
+        <div class="container px-4 px-lg-5" style="padding-top: 5px; padding-bottom: 5px;">
+            <div class="row gx-2 gx-lg-3 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
                                     </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <span class="fa-stack fa-lg">
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
                                     </span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; TDP Startup 2023</div>
-                    </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; TDP Startup 2023</div>
                 </div>
             </div>
-        </footer>
-        
+        </div>
+    </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script>
+        document.getElementById('region-select').addEventListener('change', function() {
+            const region = this.value;
+            fetch('127.0.0.1:5000/api/v1/getcitypollution', {
+                    method: 'GET',
+                    headers: {
+                        "X-Api-Token": "SJPTjZSxUWGGTUTGVUDoteNOPNRCdHsS"
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Errore nella richiesta: ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('pm10').textContent = data.pm10;
+                    document.getElementById('pm2_5').textContent = data.pm2_5;
+                    document.getElementById('no2').textContent = data.NO2;
+                })
+                .catch(error => console.error('Errore nella richiesta:', error));
+        });
+    </script>
+</body>
+
 </html>

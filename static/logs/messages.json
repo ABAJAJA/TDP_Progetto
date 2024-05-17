@@ -5,6 +5,12 @@
             "email": "test@example.com",
             "phone": "123 456 7890",
             "message": "Messaggio di test delle API"
+        },
+        {
+            "name": "gabr",
+            "email": "dd@gma.com",
+            "phone": "22222222222222",
+            "message": "dd"
         }
     ]
 }
