@@ -16,6 +16,8 @@ def home():
     end_index = page * posts_per_page
     paginated_posts = data["posts"][start_index:end_index]
 
+    paginated_posts.reverse()
+
     return render_template("index.html", blog_posts=paginated_posts, next_page=page + 1)
 
 @app.route("/chi-siamo")
