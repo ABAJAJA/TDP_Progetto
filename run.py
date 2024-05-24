@@ -52,4 +52,4 @@ def install_package(package):
 if __name__ == "__main__":
     install_package("flask")
     install_package("datetime")    
-    app.run(debug=True)
+    app.run(host="localhost", port="8000", debug=True)

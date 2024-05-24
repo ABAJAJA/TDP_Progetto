@@ -10,6 +10,7 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet" />
         <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
     </head>
     <body>
@@ -57,7 +58,7 @@
                     <hr class="my-4" />
                     {% endfor %}
                     <div class="d-flex justify-content-end mb-4">
-                        <a class="btn btn-primary text-uppercase" href="?page={{ next_page }}">Older Posts →</a>
+                        <a class="btn btn-primary text-uppercase" href="?page={{ next_page }}">Avanti →</a>
                     </div>
                 </div>
             </div>
@@ -90,8 +91,14 @@
             </div>
         </footer>
         
+        <div id="assistance-button">
+            <a id="assistance-icon" href="/contattaci">
+                <button>
+                    <i class="fa-solid fa-phone"></i>
+                </button>
+            </a>
+        </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
     </body>
 </html>

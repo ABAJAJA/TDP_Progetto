@@ -12,6 +12,7 @@ POST_TEMPLATE = """
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet" />
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -79,8 +80,14 @@ POST_TEMPLATE = """
             </div>
         </footer>
         
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div id="assistance-button">
+            <a id="assistance-icon" href="/contattaci">
+                <button>
+                    <i class="fa-solid fa-phone"></i>
+                </button>
+            </a>
+        </div>
+        
         <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
     </body>
 </html>

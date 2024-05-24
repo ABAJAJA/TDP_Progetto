@@ -29,6 +29,10 @@
       type="text/css"
     />
     <link
+      href="{{ url_for('static', filename='css/custom.css') }}"
+      rel="stylesheet"
+    />
+    <link
       href="{{ url_for('static', filename='css/styles.css') }}"
       rel="stylesheet"
     />
@@ -88,95 +92,198 @@
 
     <article class="card">
       <div class="card-header">
-        <h2 class="card-title">Inquinamento: Una Minaccia per il Nostro Pianeta</h2>
+        <h2 class="card-title">
+          Inquinamento: Una Minaccia per il Nostro Pianeta
+        </h2>
       </div>
       <div class="card-body">
-        <p>L'inquinamento è un'alterazione dell'ambiente causata da elementi inquinanti, sia naturali che antropici. Esso può provocare disagi temporanei, patologie o danni permanenti per la vita in una data area, disturbando l'equilibrio con i cicli naturali esistenti. L'alterazione può essere chimica, fisica o biologica.</p>
+        <p>
+          L'inquinamento è un'alterazione dell'ambiente causata da elementi
+          inquinanti, sia naturali che antropici. Esso può provocare disagi
+          temporanei, patologie o danni permanenti per la vita in una data area,
+          disturbando l'equilibrio con i cicli naturali esistenti. L'alterazione
+          può essere chimica, fisica o biologica.
+        </p>
 
-    <h2>Le Principali Forme di Inquinamento</h2>
-    <h3>1. Inquinamento Atmosferico</h3>
-    <ul>
-        <li><strong>Cause:</strong> Gas di scarico, combustione, agenti chimici e CO2. Le principali fonti includono attività industriali, impianti di produzione di energia, impianti di riscaldamento e traffico.</li>
-        <li><strong>Effetti:</strong> Problemi come il buco nell'ozono, smog, piogge acide e problemi respiratori. Le aree urbane sono particolarmente colpite.</li>
-    </ul>
+        <h2>Le Principali Forme di Inquinamento</h2>
+        <h3>1. Inquinamento Atmosferico</h3>
+        <ul>
+          <li>
+            <strong>Cause:</strong> Gas di scarico, combustione, agenti chimici
+            e CO2. Le principali fonti includono attività industriali, impianti
+            di produzione di energia, impianti di riscaldamento e traffico.
+          </li>
+          <li>
+            <strong>Effetti:</strong> Problemi come il buco nell'ozono, smog,
+            piogge acide e problemi respiratori. Le aree urbane sono
+            particolarmente colpite.
+          </li>
+        </ul>
 
-    <h3>2. Inquinamento Idrico</h3>
-    <ul>
-        <li><strong>Cause:</strong> Rifiuti plastici, perdite di petrolio, effluenti urbani e industriali.</li>
-        <li><strong>Effetti:</strong> Contaminazione dell'acqua potabile e della catena alimentare, con gravi conseguenze per la salute umana e gli ecosistemi acquatici.</li>
-    </ul>
+        <h3>2. Inquinamento Idrico</h3>
+        <ul>
+          <li>
+            <strong>Cause:</strong> Rifiuti plastici, perdite di petrolio,
+            effluenti urbani e industriali.
+          </li>
+          <li>
+            <strong>Effetti:</strong> Contaminazione dell'acqua potabile e della
+            catena alimentare, con gravi conseguenze per la salute umana e gli
+            ecosistemi acquatici.
+          </li>
+        </ul>
 
-    <h3>3. Inquinamento del Suolo</h3>
-    <ul>
-        <li><strong>Cause:</strong> Pesticidi, fertilizzanti e rifiuti solidi.</li>
-        <li><strong>Effetti:</strong> Desertificazione e accumulo di tossine nelle catene alimentari, compromettendo la salute di flora, fauna e umani.</li>
-    </ul>
+        <h3>3. Inquinamento del Suolo</h3>
+        <ul>
+          <li>
+            <strong>Cause:</strong> Pesticidi, fertilizzanti e rifiuti solidi.
+          </li>
+          <li>
+            <strong>Effetti:</strong> Desertificazione e accumulo di tossine
+            nelle catene alimentari, compromettendo la salute di flora, fauna e
+            umani.
+          </li>
+        </ul>
 
-    <h3>4. Inquinamento Acustico</h3>
-    <ul>
-        <li><strong>Cause:</strong> Traffico, aeroporti, industrie.</li>
-        <li><strong>Effetti:</strong> Aumento dello stress, disturbi del sonno e altri problemi di salute.</li>
-    </ul>
+        <h3>4. Inquinamento Acustico</h3>
+        <ul>
+          <li><strong>Cause:</strong> Traffico, aeroporti, industrie.</li>
+          <li>
+            <strong>Effetti:</strong> Aumento dello stress, disturbi del sonno e
+            altri problemi di salute.
+          </li>
+        </ul>
 
-    <h3>5. Inquinamento Termico</h3>
-    <ul>
-        <li><strong>Cause:</strong> Riscaldamento globale, deforestazione e urbanizzazione.</li>
-        <li><strong>Effetti:</strong> Alterazioni climatiche, scioglimento dei ghiacci polari e perdita di habitat.</li>
-    </ul>
+        <h3>5. Inquinamento Termico</h3>
+        <ul>
+          <li>
+            <strong>Cause:</strong> Riscaldamento globale, deforestazione e
+            urbanizzazione.
+          </li>
+          <li>
+            <strong>Effetti:</strong> Alterazioni climatiche, scioglimento dei
+            ghiacci polari e perdita di habitat.
+          </li>
+        </ul>
 
-    <h3>6. Inquinamento Luminoso</h3>
-    <ul>
-        <li><strong>Cause:</strong> Illuminazione artificiale notturna.</li>
-        <li><strong>Effetti:</strong> Alterazione dei ritmi naturali di flora e fauna, e dei ritmi circadiani umani.</li>
-    </ul>
+        <h3>6. Inquinamento Luminoso</h3>
+        <ul>
+          <li><strong>Cause:</strong> Illuminazione artificiale notturna.</li>
+          <li>
+            <strong>Effetti:</strong> Alterazione dei ritmi naturali di flora e
+            fauna, e dei ritmi circadiani umani.
+          </li>
+        </ul>
 
-    <h3>7. Inquinamento Elettromagnetico</h3>
-    <ul>
-        <li><strong>Cause:</strong> Radiazioni elettromagnetiche da apparecchiature elettroniche.</li>
-        <li><strong>Effetti:</strong> Potenziali danni alla salute umana e alla biodiversità.</li>
-    </ul>
+        <h3>7. Inquinamento Elettromagnetico</h3>
+        <ul>
+          <li>
+            <strong>Cause:</strong> Radiazioni elettromagnetiche da
+            apparecchiature elettroniche.
+          </li>
+          <li>
+            <strong>Effetti:</strong> Potenziali danni alla salute umana e alla
+            biodiversità.
+          </li>
+        </ul>
 
-    <h2>Approfondimento: L'inquinamento Atmosferico</h2>
-    <p>L'inquinamento atmosferico è causato dalla diffusione nell’atmosfera di gas e polveri sottilissime. Le principali fonti includono:</p>
-    <ul>
-        <li>Attività Industriali: Impianti chimici e industriali rilasciano vari inquinanti nell’aria.</li>
-        <li>Traffico Veicolare: I motori a scoppio degli autoveicoli emettono ossidi di azoto, anidride solforosa e monossido di carbonio.</li>
-        <li>Impianti di Riscaldamento e Produzione di Energia: L'uso di combustibili fossili è una delle cause principali, responsabile del 75% dell’inquinamento outdoor.</li>
-    </ul>
-    <p>Gli inquinanti atmosferici principali includono:</p>
-    <ul>
-        <li>Ossidi di azoto (NO2)</li>
-        <li>Anidride solforosa (SO2)</li>
-        <li>Monossido di carbonio (CO) e anidride carbonica (CO2)</li>
-        <li>Composti organici volatili (COV)</li>
-        <li>Ozono (O3)</li>
-        <li>Radicali liberi</li>
-        <li>Metalli pesanti come il piombo</li>
-        <li>Particolato (PM10, PM2.5)</li>
-    </ul>
+        <h2>Approfondimento: L'inquinamento Atmosferico</h2>
+        <p>
+          L'inquinamento atmosferico è causato dalla diffusione nell’atmosfera
+          di gas e polveri sottilissime. Le principali fonti includono:
+        </p>
+        <ul>
+          <li>
+            Attività Industriali: Impianti chimici e industriali rilasciano vari
+            inquinanti nell’aria.
+          </li>
+          <li>
+            Traffico Veicolare: I motori a scoppio degli autoveicoli emettono
+            ossidi di azoto, anidride solforosa e monossido di carbonio.
+          </li>
+          <li>
+            Impianti di Riscaldamento e Produzione di Energia: L'uso di
+            combustibili fossili è una delle cause principali, responsabile del
+            75% dell’inquinamento outdoor.
+          </li>
+        </ul>
+        <p>Gli inquinanti atmosferici principali includono:</p>
+        <ul>
+          <li>Ossidi di azoto (NO2)</li>
+          <li>Anidride solforosa (SO2)</li>
+          <li>Monossido di carbonio (CO) e anidride carbonica (CO2)</li>
+          <li>Composti organici volatili (COV)</li>
+          <li>Ozono (O3)</li>
+          <li>Radicali liberi</li>
+          <li>Metalli pesanti come il piombo</li>
+          <li>Particolato (PM10, PM2.5)</li>
+        </ul>
 
-    <h2>Caso Studio: Tempesta di Smog a Pechino</h2>
-    <p>Recentemente, Pechino ha affrontato una grave tempesta di sabbia con livelli di PM10 che hanno superato di 30 volte i limiti guida dell'OMS. Questa situazione ha portato l'indice di qualità dell'aria a livelli "gravemente inquinanti". Le autorità hanno raccomandato di rimanere in casa e di evitare attività all'aperto.</p>
+        <h2>Caso Studio: Tempesta di Smog a Pechino</h2>
+        <p>
+          Recentemente, Pechino ha affrontato una grave tempesta di sabbia con
+          livelli di PM10 che hanno superato di 30 volte i limiti guida
+          dell'OMS. Questa situazione ha portato l'indice di qualità dell'aria a
+          livelli "gravemente inquinanti". Le autorità hanno raccomandato di
+          rimanere in casa e di evitare attività all'aperto.
+        </p>
 
-    <h2>Interventi Globali: L'Accordo di Parigi</h2>
-    <p>L'Accordo di Parigi, adottato nel 2015, ha fissato obiettivi per limitare il riscaldamento globale a ben al di sotto di 2°C rispetto ai livelli preindustriali, con l'obiettivo di limitare l'aumento a 1,5°C. L'UE ha preso l'impegno di raggiungere la neutralità climatica entro il 2050 e di ridurre le emissioni del 55% entro il 2030 rispetto ai livelli del 1990.</p>
+        <h2>Interventi Globali: L'Accordo di Parigi</h2>
+        <p>
+          L'Accordo di Parigi, adottato nel 2015, ha fissato obiettivi per
+          limitare il riscaldamento globale a ben al di sotto di 2°C rispetto ai
+          livelli preindustriali, con l'obiettivo di limitare l'aumento a 1,5°C.
+          L'UE ha preso l'impegno di raggiungere la neutralità climatica entro
+          il 2050 e di ridurre le emissioni del 55% entro il 2030 rispetto ai
+          livelli del 1990.
+        </p>
 
-    <h2>Azioni Individuali</h2>
-    <ul>
-        <li><strong>Riduzione dell'Uso di Plastica:</strong> Utilizzare alternative riutilizzabili e riciclare correttamente.</li>
-        <li><strong>Trasporti Sostenibili:</strong> Utilizzare mezzi di trasporto ecologici come biciclette, mezzi pubblici e veicoli elettrici.</li>
-        <li><strong>Risparmio Energetico:</strong> Adottare comportamenti di risparmio energetico e utilizzare fonti di energia rinnovabile.</li>
-    </ul>
+        <h2>Azioni Individuali</h2>
+        <ul>
+          <li>
+            <strong>Riduzione dell'Uso di Plastica:</strong> Utilizzare
+            alternative riutilizzabili e riciclare correttamente.
+          </li>
+          <li>
+            <strong>Trasporti Sostenibili:</strong> Utilizzare mezzi di
+            trasporto ecologici come biciclette, mezzi pubblici e veicoli
+            elettrici.
+          </li>
+          <li>
+            <strong>Risparmio Energetico:</strong> Adottare comportamenti di
+            risparmio energetico e utilizzare fonti di energia rinnovabile.
+          </li>
+        </ul>
 
-    <h2>Conclusione</h2>
-    <p>L'inquinamento è una delle sfide più urgenti del nostro tempo. Affrontarlo richiede azioni concertate a livello globale, nazionale e individuale. Ognuno di noi può contribuire a ridurre l'inquinamento e proteggere il nostro pianeta per le future generazioni.</p>
+        <h2>Conclusione</h2>
+        <p>
+          L'inquinamento è una delle sfide più urgenti del nostro tempo.
+          Affrontarlo richiede azioni concertate a livello globale, nazionale e
+          individuale. Ognuno di noi può contribuire a ridurre l'inquinamento e
+          proteggere il nostro pianeta per le future generazioni.
+        </p>
 
-    <h2>Fonti e Ulteriori Risorse:</h2>
-    <ul>
-        <li><a href="https://www.consilium.europa.eu/it/policies/climate-change/paris-agreement/">Consilium: Accordo di Parigi</a></li>
-        <li><a href="https://ilgiornaledellambiente.it/inquinamento-ambientale-inquinanti/inquinamento-atmosferico-mondiale-italia/#cause">Il Giornale dell'Ambiente: Inquinamento Atmosferico</a></li>
-        <li><a href="https://www.focus.it/amp/ambiente/ecologia/la-cina-e-lo-smog-prima-e-dopo-la-cura">Focus: La Cina e lo Smog</a></li>
-    </ul>
+        <h2>Fonti e Ulteriori Risorse:</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.consilium.europa.eu/it/policies/climate-change/paris-agreement/"
+              >Consilium: Accordo di Parigi</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://ilgiornaledellambiente.it/inquinamento-ambientale-inquinanti/inquinamento-atmosferico-mondiale-italia/#cause"
+              >Il Giornale dell'Ambiente: Inquinamento Atmosferico</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.focus.it/amp/ambiente/ecologia/la-cina-e-lo-smog-prima-e-dopo-la-cura"
+              >Focus: La Cina e lo Smog</a
+            >
+          </li>
+        </ul>
       </div>
     </article>
 
@@ -214,8 +321,15 @@
         </div>
       </div>
     </footer>
+  
+    <div id="assistance-button">
+      <a id="assistance-icon" href="/contattaci">
+          <button>
+              <i class="fa-solid fa-phone"></i>
+          </button>
+      </a>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
   </body>
 </html>

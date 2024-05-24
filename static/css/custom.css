@@ -1,0 +1,30 @@
+#assistance-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+  
+  #assistance-button button {
+    background-color: #0E9D12;
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #assistance-button button:hover {
+    background-color: #16c01b;
+  }
+  
+  #assistance-button img {
+    width: 30px;
+    height: 30px;
+  }
+
+  #assistance-icon a {
+    text-decoration: none;
+  }
+  
