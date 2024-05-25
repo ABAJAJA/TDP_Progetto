@@ -57,9 +57,11 @@
                     </div>
                     <hr class="my-4" />
                     {% endfor %}
-                    <div class="d-flex justify-content-end mb-4">
-                        <a class="btn btn-primary text-uppercase" href="?page={{ next_page }}">Avanti →</a>
-                    </div>
+                    {% if myarr|length > 1 %}
+                        <div class="d-flex justify-content-end mb-4">
+                            <a class="btn btn-primary text-uppercase" href="?page={{ next_page }}">Avanti →</a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
