@@ -10,9 +10,15 @@ app.register_blueprint(internal_api, url_prefix='/api/v1')
 def home():
     with open("./static/logs/blogpost.json", "r") as file:
         data = json.load(file)
-    page = int(request.args.get('page', 1))
+    
+    try:
+        page = int(request.args.get('page', 1))
+    except:
+        page = 1
+
     if page < 0: 
         page = 1
+    
     posts_per_page = 10
     start_index = (page - 1) * posts_per_page
     end_index = page * posts_per_page
